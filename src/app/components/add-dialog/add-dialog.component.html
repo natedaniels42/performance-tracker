@@ -1,0 +1,30 @@
+<div class="container">
+    <form [formGroup]="addForm" style="display: flex; flex-direction: column;">
+        <mat-form-field>
+            <mat-label>Weight</mat-label>
+            <input matInput [formControl]="weight">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Workout</mat-label>
+            <mat-select [formControl]="workout">
+              <mat-option value="Y">Yes</mat-option>
+              <mat-option value="N">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Food</mat-label>
+            <mat-select [formControl]="food">
+              <mat-option value="Y">Yes</mat-option>
+              <mat-option value="N">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field >
+            <mat-label>Alcohol</mat-label>
+            <mat-select [formControl]="alcohol">
+              <mat-option value="Y">Yes</mat-option>
+              <mat-option value="N">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" align="center" (click)="addData()">Add</button>
+    </form>
+</div>
