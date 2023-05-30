@@ -1,6 +1,6 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -21,7 +21,8 @@ export class AddDialogComponent implements OnInit {
     alcohol: this.alcohol
   })
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: {data: any}, private dataService: DataService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dataService: DataService,
+    public dialogRef: MatDialogRef<AddDialogComponent>) { }
 
   ngOnInit(): void {
     console.log(this.data);
@@ -53,6 +54,8 @@ export class AddDialogComponent implements OnInit {
 
     this.dataService.addData(requestObj).subscribe((result: any) => {
       console.log(result);
+
+      this.dialogRef.close();
     })
   }
 }
