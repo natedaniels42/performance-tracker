@@ -29,14 +29,23 @@
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>   
+    </table>  
+    <br>
+    <div id="pie-chart-container">
+        <canvas id="workout-table">{{pieChart1}}</canvas>
+        <canvas id="food-table">{{pieChart2}}</canvas>
+        <canvas id="alcohol-table">{{pieChart3}}</canvas>
+    </div> 
     <br>
     <div style="width: 100%;"><canvas id="weight-table">{{chart}}</canvas></div>
     <br>
     <div id="photo-container">
-        <div class="photo-card" *ngFor="let photo of photoArr">
+        <div class="photo-card" *ngFor="let photo of photoArr" (mouseenter)="onMouseEnter(photo)" (mouseleave)="onMouseLeave()">
             <img [src]="'assets/images/' + photo">
         </div>
     </div>
    
+    <div id="photo-expand" *ngIf="showPhoto" >
+        <img [src]="'assets/images/' + photo">
+    </div>
 </div>
