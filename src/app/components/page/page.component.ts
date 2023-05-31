@@ -17,6 +17,8 @@ export class PageComponent implements OnInit{
 
   displayedColumns: string[] = ['day', 'weight', 'workout', 'food', 'alcohol', 'date'];
 
+  photoArr = ['dog1.jpg', 'dog2.jpg', 'dog3.webp', 'dog1.jpg', 'dog2.jpg', 'dog3.webp', 'dog1.jpg', 'dog2.jpg', 'dog3.webp', 'dog1.jpg', 'dog2.jpg', 'dog3.webp', 'dog1.jpg', 'dog2.jpg', 'dog3.webp'];
+
   constructor(public dialog: MatDialog, private dataService: DataService) {}
 
   ngOnInit() {
@@ -32,19 +34,21 @@ export class PageComponent implements OnInit{
       this.chart = new Chart('weight-table', {
         type: 'line',
         data: {
-          labels: data.map((item: any) => new Date(item.date).toDateString()),
+          labels: data.map((item: any) => item.day),
           datasets: [
             {
               label: 'Weight',
               data: data.map((item: any) => item.weight),
               borderColor: 'purple',
-              backgroundColor: 'purple',
+              backgroundColor: 'light-purple',
+              pointStyle: 'circle',
+              pointRadius: 5,
             }
           ],
         },
         options: {
           responsive: true
-        }
+        },
       })
     })
   }
@@ -56,7 +60,7 @@ export class PageComponent implements OnInit{
           data: this.data,
           dialog: DialogRef
         },
-        height: '400px',
+        height: 'fit-content',
         width: '600px'
       }
     );

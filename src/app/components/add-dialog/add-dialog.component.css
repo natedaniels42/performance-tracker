@@ -1,3 +1,11 @@
 .container {
     padding: 10px;
 }
+
+.file-upload {
+    color: white;
+}
+
+.file-input {
+    display: none;
+}
