@@ -15,12 +15,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from  '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageComponent,
-    AddDialogComponent
+    AddDialogComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,

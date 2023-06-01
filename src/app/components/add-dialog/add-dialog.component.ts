@@ -44,17 +44,18 @@ export class AddDialogComponent implements OnInit {
       day++;
     }
 
-    console.log(day);
-
     const requestObj = {
       day: day,
       weight: this.weight.value,
       workout: this.workout.value,
       food: this.food.value,
       alcohol: this.alcohol.value,
-      date: new Date()
+      date: new Date(),
+      user: this.data.user,
+      photo: `${this.data.user}${day}.jpg`
     };
 
+    console.log(requestObj);
     this.dataService.addData(requestObj).subscribe((result: any) => {
       console.log(result);
 

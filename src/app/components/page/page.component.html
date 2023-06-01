@@ -1,5 +1,8 @@
 <div class="container">
-    <button mat-raised-button color="primary" (click)="openDialog()">Add</button>
+    <div class="button-container">
+        <button mat-raised-button color="primary" (click)="openDialog()">Add</button>
+        <button mat-raised-button color="primary" *ngIf="showLogout" (click)="onLogout()">Logout</button>
+    </div>
     <table mat-table [dataSource]="data" >
     <!-- class="mat-elevation-z8" -->
         <ng-container matColumnDef="day">
@@ -40,12 +43,12 @@
     <div style="width: 100%;"><canvas id="weight-table">{{chart}}</canvas></div>
     <br>
     <div id="photo-container">
-        <div class="photo-card" *ngFor="let photo of photoArr" (mouseenter)="onMouseEnter(photo)" (mouseleave)="onMouseLeave()">
+        <div class="photo-card" *ngFor="let item of data" (mouseenter)="onMouseEnter(item.photo)" (mouseleave)="onMouseLeave()">
+            <img [src]="'assets/images/' + item.photo">
+        </div>
+        <div id="photo-expand" *ngIf="showPhoto" >
             <img [src]="'assets/images/' + photo">
         </div>
     </div>
    
-    <div id="photo-expand" *ngIf="showPhoto" >
-        <img [src]="'assets/images/' + photo">
-    </div>
 </div>

@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    background-color: white;
+}
+
+.container > img {
+    width: 250px;
+    height: 400px;
+    padding: 25px;
+    opacity: .5;
+}
+
+.container > img:hover {
+    cursor: pointer;
+    opacity: 1;
+}

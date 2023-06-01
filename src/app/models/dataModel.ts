@@ -4,7 +4,9 @@ export interface Data {
     workout: YesNo,
     food: YesNo,
     alcohol: YesNo,
-    date: string
+    date: string,
+    user: string,
+    photo: string
 }
 
 export enum YesNo {
