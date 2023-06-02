@@ -46,3 +46,24 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: calc(100vw - 100px);
+    }
+
+    table {
+        width: 100%;
+    }
+
+    #pie-chart-container {
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    #photo-expand {
+        left: 30vw;
+    }
+} 
+    
+

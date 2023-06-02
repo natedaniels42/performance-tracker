@@ -30,7 +30,7 @@ export class PageComponent implements OnInit{
     const loginRef = this.dialog.open(LoginDialogComponent,
       {
         height: 'fit-content',
-        width: '600px'
+        // width: '350px'
       }
     );
 
@@ -161,7 +161,7 @@ export class PageComponent implements OnInit{
     const loginRef = this.dialog.open(LoginDialogComponent,
       {
         height: 'fit-content',
-        width: '600px'
+        // width: '600px'
       }
     );
 
