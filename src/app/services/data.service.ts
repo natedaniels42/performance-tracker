@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -16,6 +16,13 @@ export class DataService {
   }
 
   addData(request: any) {
-    return this.http.post(this.url, request);
+    const headers = new HttpHeaders()
+      // .set('Content-Type', 'multipart/form-data')
+      .set('enctype', 'multipart/form-data');
+    return this.http.post(this.url, request, {headers});
+  }
+
+  getImages() {
+    return this.http.get('http://localhost:3000/images');
   }
 }

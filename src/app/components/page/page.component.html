@@ -1,6 +1,7 @@
 <div class="container">
     <div class="button-container">
         <button mat-raised-button color="primary" (click)="openDialog()">Add</button>
+        <h1>{{user}}</h1>
         <button mat-raised-button color="primary" *ngIf="showLogout" (click)="onLogout()">Logout</button>
     </div>
     <table mat-table [dataSource]="data" >
@@ -44,10 +45,10 @@
     <br>
     <div id="photo-container">
         <div class="photo-card" *ngFor="let item of data" (mouseenter)="onMouseEnter(item.photo)" (mouseleave)="onMouseLeave()">
-            <img [src]="'assets/images/' + item.photo">
+            <img [src]="'http://localhost:3000/images/' + item.photo">
         </div>
         <div id="photo-expand" *ngIf="showPhoto" >
-            <img [src]="'assets/images/' + photo">
+            <img [src]="'http://localhost:3000/images/' + photo">
         </div>
     </div>
    

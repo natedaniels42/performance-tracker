@@ -27,6 +27,10 @@ export class PageComponent implements OnInit{
   constructor(public dialog: MatDialog, private dataService: DataService) {}
 
   ngOnInit() {
+    this.dataService.getImages().subscribe((result: any) => {
+      console.log(result);
+    })
+
     const loginRef = this.dialog.open(LoginDialogComponent,
       {
         height: 'fit-content',
