@@ -49,10 +49,10 @@
     <br>
     <div id="photo-container" *ngIf="data.length > 0">
         <div class="photo-card" *ngFor="let item of data" (mouseenter)="onMouseEnter(item.photo)" (mouseleave)="onMouseLeave()">
-            <img [src]="'http://localhost:3000/images/' + item.photo">
+            <img [src]="'https://progress-tracker-api.herokuapp.com/images/' + item.photo">
         </div>
         <div id="photo-expand" *ngIf="showPhoto" >
-            <img [src]="'http://localhost:3000/images/' + photo">
+            <img [src]="'https://progress-tracker-api.herokuapp.com/images/' + photo">
         </div>
     </div>
    
