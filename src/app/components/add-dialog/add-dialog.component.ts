@@ -15,13 +15,21 @@ export class AddDialogComponent implements OnInit {
   formData!: FormData;
   day = 1;
 
+  password = new FormControl('');
+  date = new FormControl(null, Validators.required);
   weight = new FormControl(null, Validators.required);
+  bloodPressureS = new FormControl(null, Validators.required);
+  bloodPressureD = new FormControl(null, Validators.required);
   workout = new FormControl('Y',Validators.required);
   food = new FormControl('Y', Validators.required);
   alcohol = new FormControl('Y', Validators.required);
 
   addForm = new FormGroup({
+    password: this.password,
+    date: this.date,
     weight: this.weight,
+    bloodPressureS: this.bloodPressureS,
+    bloodPressureD: this.bloodPressureD,
     workout: this.workout,
     food: this.food,
     alcohol: this.alcohol
@@ -51,22 +59,17 @@ export class AddDialogComponent implements OnInit {
     const requestObj = {
       day: this.day,
       weight: this.weight.value,
+      bloodPressureSystolic: this.bloodPressureS.value,
+      bloodPressureDiastolic: this.bloodPressureD.value,
       workout: this.workout.value,
       food: this.food.value,
       alcohol: this.alcohol.value,
-      date: new Date(),
+      date: this.date.value,
       user: this.data.user,
       photo: this.fileName
     };
 
-    // console.log(requestObj);
-    // this.formData.append('day', String(day));
-    // this.formData.append('weight', String(this.weight.value));
-    // this.formData.append('workout', String(this.workout.value));
-    // this.formData.append('food', String(this.food.value));
-    // this.formData.append('alcohol', String(this.alcohol.value));
-    // this.formData.append('user', String(this.data.user));
-    // this.formData.append('file', this.file);
+    console.log(requestObj);
 
     this.dataService.addData(requestObj).subscribe((result: any) => {
       console.log(result);

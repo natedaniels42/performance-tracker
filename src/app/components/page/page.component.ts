@@ -22,15 +22,11 @@ export class PageComponent implements OnInit{
   photo = 'dog1.jpg';
   showPhoto = false;
   showLogout = false;
-  displayedColumns: string[] = ['day', 'weight', 'workout', 'food', 'alcohol', 'date'];
+  displayedColumns: string[] = ['day', 'weight', 'bloodPressure', 'workout', 'food', 'alcohol', 'date'];
 
   constructor(public dialog: MatDialog, private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.getImages().subscribe((result: any) => {
-      console.log(result);
-    })
-
     const loginRef = this.dialog.open(LoginDialogComponent,
       {
         height: 'fit-content',

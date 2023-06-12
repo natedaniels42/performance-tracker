@@ -1,6 +1,8 @@
 export interface Data {
     day: number,
     weight: number,
+    bloodPressureSystolic: number,
+    bloodPressureDiastolic: number,
     workout: YesNo,
     food: YesNo,
     alcohol: YesNo,

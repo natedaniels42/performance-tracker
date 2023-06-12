@@ -15,7 +15,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from  '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { LoginDialogComponent } from './components/login-dialog/login-dialog.com
     MatSelectModule,
     MatInputModule,
     MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
