@@ -44,6 +44,10 @@
               <mat-option value="N">No</mat-option>
             </mat-select>
         </mat-form-field>
+        <mat-form-field >
+            <mat-label>Notes</mat-label>
+            <input matInput name="notes" type="text" maxlength="1000" [formControl]="notes">
+        </mat-form-field>
         <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
 
         <div class="file-upload">

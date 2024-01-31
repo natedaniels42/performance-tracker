@@ -6,6 +6,7 @@ export interface Data {
     workout: YesNo,
     food: YesNo,
     alcohol: YesNo,
+    notes: string,
     date: string,
     user: string,
     photo: string

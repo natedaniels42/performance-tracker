@@ -23,6 +23,7 @@ export class AddDialogComponent implements OnInit {
   workout = new FormControl('Y',Validators.required);
   food = new FormControl('Y', Validators.required);
   alcohol = new FormControl('Y', Validators.required);
+  notes = new FormControl('', Validators.required);
 
   addForm = new FormGroup({
     password: this.password,
@@ -32,7 +33,8 @@ export class AddDialogComponent implements OnInit {
     bloodPressureD: this.bloodPressureD,
     workout: this.workout,
     food: this.food,
-    alcohol: this.alcohol
+    alcohol: this.alcohol,
+    notes: this.notes
   })
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dataService: DataService,
@@ -46,7 +48,7 @@ export class AddDialogComponent implements OnInit {
 
   addData() {
     if (!this.addForm.valid) {
-      console.log('not valid');
+      console.log(this.addForm);
       return;
     }
 
@@ -64,6 +66,7 @@ export class AddDialogComponent implements OnInit {
       workout: this.workout.value,
       food: this.food.value,
       alcohol: this.alcohol.value,
+      notes: this.notes.value,
       date: this.date.value,
       user: this.data.user,
       photo: this.fileName

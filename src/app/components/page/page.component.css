@@ -47,6 +47,10 @@
     justify-content: space-between;
 }
 
+a {
+    color: lightblue !important;
+}
+
 @media screen and (max-width: 767px) {
     .container {
         width: calc(100vw - 100px);

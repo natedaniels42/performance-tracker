@@ -18,13 +18,15 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NotesDialogComponent } from './components/notes-dialog/notes-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageComponent,
     AddDialogComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    NotesDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -30,6 +30,10 @@
             <th mat-header-cell *matHeaderCellDef> Alcohol </th>
             <td mat-cell *matCellDef="let element"><mat-icon [ngStyle]="{'color': element.alcohol === 'Y' ? 'green' : 'red'}">{{element.alcohol === 'Y' ? 'done' : 'clear'}}</mat-icon></td>
         </ng-container>
+        <ng-container matColumnDef="notes">
+            <th mat-header-cell *matHeaderCellDef> Notes </th>
+            <td mat-cell *matCellDef="let element"><a href="javascript:void(0)" (click)="onNotesClick()">Click to read notes</a></td>
+        </ng-container>
         <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef> Date </th>
             <td mat-cell *matCellDef="let element"> {{element.date | date: 'shortDate'}} </td>

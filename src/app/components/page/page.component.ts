@@ -6,6 +6,7 @@ import { DataService } from 'src/app/services/data.service';
 import { Chart, ChartItem } from 'chart.js/auto';
 import { DialogRef } from '@angular/cdk/dialog';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+import { NotesDialogComponent } from '../notes-dialog/notes-dialog.component';
 
 @Component({
   selector: 'app-page',
@@ -22,7 +23,7 @@ export class PageComponent implements OnInit{
   photo = 'dog1.jpg';
   showPhoto = false;
   showLogout = false;
-  displayedColumns: string[] = ['day', 'weight', 'bloodPressure', 'workout', 'food', 'alcohol', 'date'];
+  displayedColumns: string[] = ['day', 'weight', 'bloodPressure', 'workout', 'food', 'alcohol', 'notes', 'date'];
 
   constructor(public dialog: MatDialog, private dataService: DataService) {}
 
@@ -209,5 +210,20 @@ export class PageComponent implements OnInit{
   onMouseLeave() {
     this.photo = '';
     this.showPhoto = false;
+  }
+
+  onNotesClick(): void {
+    const dialogRef = this.dialog.open(NotesDialogComponent,
+      {
+        data: {
+          data: this.data,
+          user: this.user,
+          dialog: DialogRef
+        },
+        maxHeight: '80vh',
+        width: '80vw',
+        
+      }
+    );
   }
 }

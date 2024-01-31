@@ -22,8 +22,4 @@ export class DataService {
       .set('enctype', 'multipart/form-data');
     return this.http.post(this.url, request, {headers});
   }
-
-  // getImages() {
-  //   return this.http.get('http://localhost:3000/images');
-  // }
 }
