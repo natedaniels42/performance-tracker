@@ -7,7 +7,8 @@ import { Injectable } from '@angular/core';
 export class UploadService {
   url!: string;
   constructor(private http: HttpClient) { 
-    this.url = 'http://localhost:3000/api/v1/upload';
+    this.url = 'https://progress-tracker-api.herokuapp.com/api/v1/upload';
+    // this.url = 'http://localhost:3000/api/v1/upload';
   }
 
   upload(request: any) {
