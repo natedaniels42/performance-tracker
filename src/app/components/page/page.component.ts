@@ -48,7 +48,7 @@ export class PageComponent implements OnInit{
     this.dataService.getData().subscribe((data: any) => {
       console.log(data);
       
-      this.data = data.filter((item: any) => item.user === this.user);
+      this.data = data.filter((item: any) => item.user === this.user).sort((a: any, b: any) => a.day - b.day);
       
       this.chart = new Chart('weight-table', {
         type: 'line',
