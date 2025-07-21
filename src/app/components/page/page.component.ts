@@ -23,7 +23,7 @@ export class PageComponent implements OnInit{
   photo = 'dog1.jpg';
   showPhoto = false;
   showLogout = false;
-  displayedColumns: string[] = ['day', 'weight', 'bloodPressure', 'workout', 'food', 'alcohol', 'notes', 'date'];
+  displayedColumns: string[] = ['day', 'weight', 'bloodPressure1', 'bloodPressure2', 'workout', 'food', 'alcohol', 'notes', 'waist', 'leftArm', 'rightArm', 'leftLeg', 'rightLeg','date'];
 
   constructor(public dialog: MatDialog, private dataService: DataService) {}
 
@@ -191,10 +191,12 @@ export class PageComponent implements OnInit{
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
 
-      this.chart.destroy();
-      this.pieChart1.destroy();
-      this.pieChart2.destroy();
-      this.pieChart3.destroy();
+      if (this.chart) {
+        this.chart.destroy();
+        this.pieChart1.destroy();
+        this.pieChart2.destroy();
+        this.pieChart3.destroy();
+      }
 
       this.loadData();
     });

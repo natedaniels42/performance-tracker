@@ -14,9 +14,13 @@
             <th mat-header-cell *matHeaderCellDef> Weight </th>
             <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
         </ng-container>
-        <ng-container matColumnDef="bloodPressure">
-            <th mat-header-cell *matHeaderCellDef> Blood Pressure </th>
-            <td mat-cell *matCellDef="let element"> {{element.bloodPressureSystolic}} / {{element.bloodPressureDiastolic}} </td>
+        <ng-container matColumnDef="bloodPressure1">
+            <th mat-header-cell *matHeaderCellDef> Blood Pressure (Morning) </th>
+            <td mat-cell *matCellDef="let element"> {{element.bloodPressureSystolic1}} / {{element.bloodPressureDiastolic1}} </td>
+        </ng-container>
+        <ng-container matColumnDef="bloodPressure2">
+            <th mat-header-cell *matHeaderCellDef> Blood Pressure (Evening)</th>
+            <td mat-cell *matCellDef="let element"> {{element.bloodPressureSystolic2}} / {{element.bloodPressureDiastolic2}} </td>
         </ng-container>
         <ng-container matColumnDef="workout">
             <th mat-header-cell *matHeaderCellDef> Workout </th>
@@ -33,6 +37,26 @@
         <ng-container matColumnDef="notes">
             <th mat-header-cell *matHeaderCellDef> Notes </th>
             <td mat-cell *matCellDef="let element"><a href="javascript:void(0)" (click)="onNotesClick()">Click to read notes</a></td>
+        </ng-container>
+        <ng-container matColumnDef="waist">
+            <th mat-header-cell *matHeaderCellDef> Waist </th>
+            <td mat-cell *matCellDef="let element"> {{element.waist}} </td>
+        </ng-container>
+        <ng-container matColumnDef="leftArm">
+            <th mat-header-cell *matHeaderCellDef> Left Arm </th>
+            <td mat-cell *matCellDef="let element"> {{element.leftArm}} </td>
+        </ng-container>
+        <ng-container matColumnDef="rightArm">
+            <th mat-header-cell *matHeaderCellDef> Right Arm </th>
+            <td mat-cell *matCellDef="let element"> {{element.rightArm}} </td>
+        </ng-container>
+        <ng-container matColumnDef="leftLeg">
+            <th mat-header-cell *matHeaderCellDef> Left Leg </th>
+            <td mat-cell *matCellDef="let element"> {{element.leftLeg}} </td>
+        </ng-container>
+        <ng-container matColumnDef="rightLeg">
+            <th mat-header-cell *matHeaderCellDef> Right Leg </th>
+            <td mat-cell *matCellDef="let element"> {{element.rightLeg}} </td>
         </ng-container>
         <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef> Date </th>
