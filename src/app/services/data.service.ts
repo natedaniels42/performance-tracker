@@ -8,8 +8,8 @@ export class DataService {
   url!: string;
 
   constructor(private http: HttpClient) {
-    //this.url = 'https://progress-tracker-api.herokuapp.com/api/v1/reports';
-    this.url = 'http://localhost:3000/api/v1/reports';
+    this.url = 'https://progress-tracker-api.herokuapp.com/api/v1/reports';
+    //this.url = 'http://localhost:3000/api/v1/reports';
   }
 
   getData() {
